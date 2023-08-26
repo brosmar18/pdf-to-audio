@@ -10,6 +10,9 @@ def index():
         pdf_file = request.files['pdf_file']
         if pdf_file:
            # Read PDF
-
+            pdf_reader = PyPDF2.PdfReader(pdf_file)
+            text = ""
+            for page in pdf_reader.pages:
+                text += page.extract_text()
 
     return render_template('index.html')
