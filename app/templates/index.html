@@ -9,9 +9,12 @@
   </head>
   <body>
     <h1>Upload a PDF File to Get Started</h1>
-    <form action="/" method="post" enctype="multipart/form-data">
-      <input type="file" name="pdf_file" accept=".pdf">
+    <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
+      <input type="file" name="pdf_file" accept=".pdf" onchange="submitForm()">
       <input type="submit" value="Upload">
     </form>
+    <a href="{{ download_link }}" download>
+      <button>Download Audio</button>
+    </a>
   </body>
 </html>
