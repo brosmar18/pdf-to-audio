@@ -25,8 +25,13 @@ def index():
 
             print("File uploaded and processed")  # Debug print
 
+            # Extract and store the text from PDF
+            extracted_text = ""
+            for page in pdf_reader.pages:
+                extracted_text += page.extract_text()
+
             # Create a download link
             download_link = f"/static/output.mp3"
             print(f"Download link: {download_link}")  # Debug print
 
-    return render_template('index.html', download_link=download_link)
+    return render_template('index.html', download_link=download_link, extracted_text=extracted_text)
