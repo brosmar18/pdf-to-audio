@@ -4,17 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PDF to Audio Converter</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
+
   <body>
-    <h1>Upload a PDF File to Get Started</h1>
-    <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
-      <input type="file" name="pdf_file" accept=".pdf">
-      <input type="submit" value="Upload">      
-    </form>
-    <a href="{{ download_link }}" download>
-      <button>Download Audio</button>
-    </a>
+    <header class="header">
+      <h1 class="header__title">PDF to Audio Converter</h1>
+    </header>
+
+    <main class="main-content">
+      <section class="converter">
+        <h2 class="converter__heading">Upload and Convert</h2>
+        <form
+          class="converter__form"
+          action="/"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input
+            class="converter__input"
+            type="file"
+            name="pdf_file"
+            accept=".pdf"
+          />
+          <input class="converter__submit" type="submit" value="Upload" />
+        </form>
+        {% if download_link %}
+        <div class="converter__actions">
+          <a
+            class="converter__download-link"
+            href="{{ download_link }}"
+            download
+          >
+            <button class="converter__download-btn">Download Audio</button>
+          </a>
+        </div>
+        {% endif %}
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+          <div class="footer__copyright">
+              <p>&copy; 2023 PDF to Audio Converter. All rights reserved.</p>
+          </div>
+          <div class="footer__links">
+              <a href="#" class="footer__link">Terms of Service</a>
+              <a href="#" class="footer__link">Privacy Policy</a>
+              <a href="#" class="footer__link">Contact Us</a>
+          </div>
+          <div class="footer__social">
+              <a href="#" class="footer__social-link">Facebook</a>
+              <a href="#" class="footer__social-link">Twitter</a>
+              <a href="#" class="footer__social-link">LinkedIn</a>
+          </div>
+      </div>
+  </footer>
+  
   </body>
 </html>
