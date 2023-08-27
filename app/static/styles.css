@@ -48,6 +48,14 @@ body, html {
     flex-direction: column;
 }
 
+
+.converter__preview {
+    margin-top: 2em;
+    border: 1px solid #D32F2F;
+    overflow: auto;
+  }
+  
+
 .converter__input,
 .converter__submit {
     margin-bottom: 1em;
