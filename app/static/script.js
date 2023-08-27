@@ -11,3 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const pdfTextElement = document.getElementById('pdfText');
+    pdfTextElement.innerText = "{{ extracted_text }}";
+});
